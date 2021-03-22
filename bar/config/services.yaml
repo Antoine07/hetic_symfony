@@ -34,6 +34,9 @@ services:
             - message: "%app_hello_message%"
             - content: "%app_hello_content%"
 
+    # la dépendance vendor est maintenant intégrer dans le conteneur de service
+    cebe\markdown\Markdown: ~
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 doctrine:

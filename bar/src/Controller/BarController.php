@@ -131,9 +131,10 @@ class BarController extends AbstractController
     /**
      * @Route("/showService", name="showService")
      */
-    public function showService(Hello $hello)
+    public function showService(Hello $hello, Markdown $parser)
     {
 
+        dd($parser);
 
         return $this->render('showService/index.html.twig', [
             'title' => 'Show service',
