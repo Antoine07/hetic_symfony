@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block body %}
+		<p>{{ message }}</p>
 	<div class="row">
-
-		{{ message }}
-		
+		{# Twig échappe les caractères spéciaux #}
+		{{ markdown | raw }}
 	</div>
 {% endblock %}

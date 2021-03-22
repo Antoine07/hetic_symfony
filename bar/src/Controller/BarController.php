@@ -134,11 +134,20 @@ class BarController extends AbstractController
     public function showService(Hello $hello, Markdown $parser)
     {
 
-        dd($parser);
+        // dd($parser);
+
+        $markdown = [
+            'post' => <<<EOT
+# Recette nouvelle bière
+* Pommes
+* Poires
+    * Sous élément avec au moins quatre espaces devant.
+EOT];
 
         return $this->render('showService/index.html.twig', [
             'title' => 'Show service',
-            'message' => $hello->say()
+            'message' => $hello->say(),
+            'markdown' => $parser->parse($markdown['post'])
         ]);
     }
 
