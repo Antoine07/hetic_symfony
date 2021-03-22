@@ -11,6 +11,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 use App\Entity\{Beer, Category, Country, Statistic, Client};
 use App\Services\Hello;
 use App\Services\HelperParser;
+use App\Services\QuoteService;
 use cebe\markdown\Markdown;
 
 class BarController extends AbstractController
@@ -154,6 +155,20 @@ EOT,
             'title' => 'Show service',
             'message' => $hello->say(),
             'recipes' => $translate->translateHtml($markdowns)
+        ]);
+    }
+
+     /**
+     * @Route("/quotes", name="quotes")
+     */
+    public function quotes(QuoteService $quote){
+
+        // dd($quote->getQuotes());
+
+        return $this->render('quotes/index.html.twig', [
+            'title' => 'Show service',
+            'quotes' => $quote->getQuotes()
+           
         ]);
     }
 
