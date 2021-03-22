@@ -33,7 +33,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
     {
         $quote = new Quote();
 
-        $form = $this->createFormBuilder($task)
+        $form = $this->createFormBuilder($quote)
             ->add('title', TextType::class)
             ->add('content', TextType::class)
             ->add('save', SubmitType::class, ['label' => 'Create Quote'])
@@ -51,12 +51,19 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 
         return $this->render('quote/new.html.twig', [
             'quote' => $quote,
-            'form' => $form->createView(),
+            'form' => $form->createView(), // voir le code dans la partie 3 ajout du formulaire Formbuilder
         ]);
     }
 ```
 
-3. Affichez le formulaire pour ajouter une citation. Vérifiez que tout fonctionne correctement
+3. Affichez le formulaire pour ajouter une citation. Vérifiez que tout fonctionne correctement.
+
+```html
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+```
 
 
 ## Définition des types de formulaire dans un dossier spécifique
