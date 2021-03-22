@@ -160,6 +160,12 @@ $markdows = [
  ];
 ```
 
+Remarque : utilisez la méthode parse de Markdown. Un pipe Symfony dans Twig s'utilise de la manière suivante.
+
+```html
+    {{ my_variable | my_pipe }}
+```
+
 ## Exercice Service Parser
 
 Un service peut injecter un autre service du container de service. Vous pouvez par exemple injecter la classe Markdown dans le contrôleur d'un autre service.
