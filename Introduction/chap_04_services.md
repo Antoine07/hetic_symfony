@@ -32,7 +32,7 @@ Notez que les repositories sont considérés comme des services.
 
 ## Exercice d'application
 
-Créez la classe Hello dans le dossier Services et injectez cette classe dans la méthode home pour afficher le message de la méthode say sur la page d'accueil.
+Créez la classe Hello dans le dossier Services.
 
 ```php
 <?php
