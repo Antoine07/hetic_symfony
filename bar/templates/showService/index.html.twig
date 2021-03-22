@@ -7,7 +7,11 @@
 {% block body %}
 		<p>{{ message }}</p>
 	<div class="row">
-		{# Twig échappe les caractères spéciaux #}
-		{{ markdown | raw }}
+		{# Twig échappe les caractères spéciaux 
+			{{ markdown | raw }}
+		#}
+		{% for recipe in recipes %}
+			{{ recipe | raw }}
+		{% endfor %}
 	</div>
 {% endblock %}
