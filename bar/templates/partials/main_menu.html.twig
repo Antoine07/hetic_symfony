@@ -22,7 +22,12 @@
               <li class="nav-item">
                 <a class="nav-link {% if route_name is defined and route_name == 'showService' %} active {% endif %}" href="{{ path('showService') }}">showService</a>
             </li>
-             
+             <li class="nav-item">
+                <a class="nav-link {% if route_name is defined and route_name == 'quotes' %} active {% endif %}" href="{{ path('quotes') }}">Quotes</a>
+            </li>
+             <li class="nav-item">
+                <a class="nav-link {% if route_name is defined and route_name == 'new' %} active {% endif %}" href="{{ path('quotes') }}">Add quote</a>
+            </li>
         </ul>
     </div>
 </nav>
