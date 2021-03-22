@@ -168,9 +168,12 @@ Remarque : utilisez la méthode parse de Markdown. Un pipe Symfony dans Twig s'u
 
 ## Exercice Service Parser
 
-Un service peut injecter un autre service du container de service. Vous pouvez par exemple injecter la classe Markdown dans le contrôleur d'un autre service.
+1. Un service peut injecter un autre service du container de service. Vous pouvez par exemple injecter la classe Markdown dans le contrôleur d'un autre service.
 
 Créez un service HelperParser. Il permettra de transformer un texte markdown en HTML. Testez ce service dans la méthode showService.
+
+
+2. Créez un service qui mélange des données d'un tableau. Utilisez ce service pour mélanger les recettes.
 
 ## Exercice Création d'un service avec un repository
 
