@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<div class="row">
+{% for quote in quotes %}
+  <div class="col-sm-12">
+    <div class="card card__beers">
+      <div class="card-body">
+        <h2 class="medium">{{quote['title']}}</h2>
+        {{ quote['content'] | raw }}
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}
