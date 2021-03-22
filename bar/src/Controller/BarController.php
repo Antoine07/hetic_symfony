@@ -10,7 +10,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 use App\Entity\{Beer, Category, Country, Statistic, Client};
 use App\Services\Hello;
-
+use App\Services\HelperParser;
 use cebe\markdown\Markdown;
 
 class BarController extends AbstractController
@@ -131,23 +131,29 @@ class BarController extends AbstractController
     /**
      * @Route("/showService", name="showService")
      */
-    public function showService(Hello $hello, Markdown $parser)
+    public function showService(Hello $hello, HelperParser $translate)
     {
 
-        // dd($parser);
-
-        $markdown = [
-            'post' => <<<EOT
+        $markdowns = [
+            '1' => <<<EOT
 # Recette nouvelle bière
 * Pommes
 * Poires
     * Sous élément avec au moins quatre espaces devant.
-EOT];
+EOT,
+            '2' => <<<EOT
+# Deuxième recette de bière
+* Poires
+* Pommes
+    * Sous élément avec au moins quatre espaces devant.
+* Houblon
+EOT,
+];
 
         return $this->render('showService/index.html.twig', [
             'title' => 'Show service',
             'message' => $hello->say(),
-            'markdown' => $parser->parse($markdown['post'])
+            'recipes' => $translate->translateHtml($markdowns)
         ]);
     }
 
