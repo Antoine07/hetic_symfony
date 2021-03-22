@@ -11,6 +11,8 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 use App\Entity\{Beer, Category, Country, Statistic, Client};
 use App\Services\Hello;
 
+use cebe\markdown\Markdown;
+
 class BarController extends AbstractController
 {
 
@@ -132,7 +134,6 @@ class BarController extends AbstractController
     public function showService(Hello $hello)
     {
 
-        // dd($hello->say());
 
         return $this->render('showService/index.html.twig', [
             'title' => 'Show service',
