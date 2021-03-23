@@ -35,17 +35,20 @@ class QuoteController extends AbstractController
         $quote = new Quote();
 
         $form = $this->createFormBuilder($quote)
-            ->add('title', TextType::class)
-            ->add('content', TextareaType::class)
+            ->add('title', TextType::class, ['required' => true, 'label' => 'Titre de la citation '])
+            ->add('content', TextareaType::class, ['required' => true, 'label' => 'Markdown '])
             ->add('save', SubmitType::class, ['label' => 'Create Quote'])
             ->getForm();
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // dd($quote); // l'hydratation du formulaire par le formeBuilder
+            
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($quote);
-            $entityManager->flush();
+            $entityManager->flush(); // commit pour faire persiter la citation dans la bd
 
             return $this->redirectToRoute('quotes');
         }
