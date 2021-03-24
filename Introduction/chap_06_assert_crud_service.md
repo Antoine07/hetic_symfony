@@ -32,7 +32,8 @@ if (!in_array($position, array(self::PRIORITY_NONE, self::PRIORITY_IMPORTANT))) 
 
 ## Exercice service & Repository
 
-Vous ne pouvez pas faire facilement d'UNION SQL avec Doctrine, vous pouvez cependant toujours utiliser PDO pour faire une requête native. Faites pour cet exercice deux méthode quoteImportant et quoteNone. Et utilisez ces deux méthodes dans votre services QuoteService pour afficher les citations par ordre d'importance et de date de création.
+Vous ne pouvez pas faire facilement d'UNION SQL avec Doctrine (DQL), vous pouvez cependant toujours utiliser PDO pour faire une requête native. 
+Pour cet exercice créez deux méthode quoteImportant et quoteNone dans votre repository. Et utilisez ces deux méthodes dans votre services QuoteService pour afficher les citations par ordre d'importance et de date de création décroissante.
 
 ## Gestion de la validation
 
