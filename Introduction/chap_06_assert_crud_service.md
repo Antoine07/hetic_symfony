@@ -55,7 +55,7 @@ Aidez vous de la documentation suivante choisissez la forme notation pour défin
 
 [NotBlank](https://symfony.com/doc/current/reference/constraints/NotBlank.html)
 
-1. Le champ titre est obligatoire et le titre doit être compris entre 5 et 10 caractères.
+1. Le champ titre est obligatoire et le titre doit être compris entre 5 et 60 caractères.
 
 2. Le contenu du markdown ne peut pas être vide.
 
