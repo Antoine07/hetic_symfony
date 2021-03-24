@@ -85,8 +85,20 @@ Pour information vous avez une commande dans Symfony qui permet de générer un 
 php bin/console make:crud Quote
 ```
 
-Si vous avez du temps ajouter un pop up de confirmation pour la suppression.
+3. Ajoutez également un message de success ou d'échec (flash message) lorsque vous faite une suppression, ajout ou modification. Utilisez pour cela dans votre méthode le code qui suit, une méthode addFlash existe implémentée pour tous les contrôleurs.
+
+```php
+ $this->addFlash('success', 'Quote updated! Knowledge is power!');
+ ```
+
+ Faites un template message.html.twig que vous importerez dans le fichier listant les quotes.
+
+4. Si vous avez du temps ajouter un pop up de confirmation pour la suppression.
 
 ## Mini projet de service
 
-Créez un service RecommendationService. Ce dernier anaylisera les bières et selon leur score important, entre 20 et 16. Affichera 10 bières à recommander.
+1. Affichez le score de chaque bière.
+
+2. Créez un service RecommendationService. Ce dernier anaylisera les bières et selon leur score important, entre 20 et 16, taguera ces bières comme des bières à recommander.
+
+3. Faites un lien qui permet de lister l'ensemble des bières recommandées.
