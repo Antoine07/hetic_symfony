@@ -34,7 +34,6 @@ if (!in_array($position, array(self::PRIORITY_NONE, self::PRIORITY_IMPORTANT))) 
 
 Vous ne pouvez pas faire facilement d'UNION SQL avec Doctrine, vous pouvez cependant toujours utiliser PDO pour faire une requête native. Faites pour cet exercice deux méthode quoteImportant et quoteNone. Et utilisez ces deux méthodes dans votre services QuoteService pour afficher les citations par ordre d'importance et de date de création.
 
-
 ## Gestion de la validation
 
 Pour cette partie mettez votre formulaire en mode no validate, pour tester les validations côté back.
@@ -61,7 +60,7 @@ Aidez vous de la documentation suivante choisissez la forme notation pour défin
 
 3. La position ne peut accepter que les trois valeurs suivantes : important, none ou null
 
-
+![validation](images/validator.png)
 
 ## Ajoutez un bouton de suppression
 
