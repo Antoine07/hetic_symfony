@@ -78,6 +78,14 @@ onsubmit="return confirm('Are you sure you want to delete this item?');">
 
 ```
 
+Lorsque vous recevez la ressource à supprimer (la bière). Vous vérifiez que vous avez envoyé le bon formulaire au bon script à l'aide du code Symfony suivant :
+
+```php
+$this->isCsrfTokenValid('delete' . $quote->getId(), $request->get('_token')); 
+```
+
+Le code ci-dessus retournera true si c'est le bon token et false sinon. Ceci évite de vous faire attaquer par un formulaire qui ne viendrait pas de votre framework.
+
 2. Créez également un bouton d'édition afin d'édtier une citation pour la modifier.
 
 Pour information vous avez une commande dans Symfony qui permet de générer un CRUD directement à partir d'une ressource, vous pouvez la tester, cependant donnnez un autre nom à celle-ci car, nous avons déjà un dossier quote et un contrôleur QuoteController.
