@@ -65,7 +65,7 @@ Aidez vous de la documentation suivante choisissez la forme notation pour défin
 
 ## Ajoutez un bouton de suppression
 
-Voici le code pour supprimer une citation. Mettez le en place directement dans la liste des quotes.
+1. Voici le code pour supprimer une citation. Mettez le en place directement dans la liste des quotes.
 
 
 ```php
@@ -77,3 +77,17 @@ onsubmit="return confirm('Are you sure you want to delete this item?');">
 </form>
 
 ```
+
+2. Créez également un bouton d'édition afin d'édtier une citation pour la modifier.
+
+Pour information vous avez une commande dans Symfony qui permet de générer un CRUD directement à partir d'une ressource, vous pouvez la tester, cependant donnnez un autre nom à celle-ci car, nous avons déjà un dossier quote et un contrôleur QuoteController.
+
+```bash
+php bin/console make:crud Quote
+```
+
+Si vous avez du temps ajouter un pop up de confirmation pour la suppression.
+
+## Mini projet de service
+
+Créez un service RecommendationService. Ce dernier anaylisera les bières et selon leur score important, entre 20 et 16. Affichera 10 bières à recommander.
